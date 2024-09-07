@@ -29,11 +29,11 @@ const emojiToCountry = {
   "🇨🇿": "Czechia"
 };
 const numberToPerson = {
-  '4915737856389': "Jan",
-  '4915159093979': "Jasmin",
-  '353861643662': "Patrick",
-  '4915229531655': "Ute",
-  '4917660192838': "Zoé",
+  '0000': "Jan",
+  '0000': "Jasmin",
+  '0000': "Patrick",
+  '0000': "Ute",
+  '0000': "Zoé",
 };
 
 function parseMessage(messageBody) {
@@ -151,6 +151,9 @@ function readGroupMessages(group) {
 
 client.initialize().catch(error => {
   console.error('Client initialization error:', error);
+  if (error.stack) {
+    console.error('Error stack:', error.stack);
+  }
 });
 
 const fs = require('fs');
